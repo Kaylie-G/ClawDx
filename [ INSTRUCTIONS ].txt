@@ -1,0 +1,55 @@
+[  INSTALLATION  ]
+*  Remember first to activate "DirectPlay" on windows:
+     °  Press "WIN+R", paste "optionalfeatures" (without quotation marks), and press "OK".
+     °  Search "Legacy Components", expand it, and check "DirectPlay".
+•  If not sure which exe to choose, pick "ClawDx".
+•  Place "ClawDx.exe" on Claw folder.
+•  Double click on "ClawDx.exe".
+
+[  CLAWDX-SETTINGS  ]
+•  "FullScreen", force Claw to lunch on fullscreen.
+•  "X"\"Y", set Claw window position in pixels.
+•  "W"\"H", set Claw window size in pixels (width\height).
+•  "MultiWin", allow multiple Claw windows.
+•  "Run", execute external application. (*)
+
+[  CLAWDX-COMMAND.LINE  ]
+•  "f1", force Claw to lunch on fullscreen.
+•  "x#"\"y#" set Claw window position in pixels.
+•  "w#"\"h#", set Claw window size in pixels (width\height).
+•  "xy", force Claw to lunch on screen center (ignore "ClawDx-Settings.ini"). (#)
+•  "m1", allow multiple Claw windows (ignore "ClawDx-Settings.ini").
+•  "r<app>", execute external application. (**)
+•  "r-", ignore applications to run on "ClawDx-Settings.ini". (***)
+
+[  NOTES  ]
+•  If missing, "ClawDx-Settings.ini" and "hook.ini" (D3DWindower.exe settings) will be created.
+
+•  Command line arguments can be set in any order.
+
+•  Command line options have higher hierarchy than those on "ClawDx-Settings.ini".
+     \_>  "f1"    >    "x,y,w,h"    >    "FullScreen"    >    "X,Y,W,H"
+
+•  ClawDx will automatically set the Claw window to fit the screen if it goes beyond limits.
+       \_>  Example 1: "X=9999", will put the window at the right.
+       \_>  Example 2: "Y=9999", will put the window at the bottom.
+       \_>  Example 3: "W=9999", will set the window width as the screen.
+       \_>  Example 4: "H=9999", will set the window height as the screen.
+(#)  By default, ClawDx will set the Claw on the X\Y parameters of "ClawDx-Settings.ini".
+        \_>  using "xy" will behave as the "X"\"Y" parameters were empty.
+
+•  There will be a 50 milliseconds delay between each external application executed.
+(*)  If not full path is set, then ClawDx will assume the app is on the local folder.
+       \_>  Example 1: "Run=D3DWindower.exe", lunch "D3DWindower.exe".
+       \_>  Example 2: "Run=LocalFolder\Example.exe", lunch on local folder.
+       \_>  Example 3: "Run=C:\Windows\notepad.exe", lunch notepad.
+(*)  To run multiple applications, use the "|" character as separator.
+       \_>  Example: "Run= App1.exe | App2.exe"
+(**) If not full path is set, then ClawDx will assume the app is on the local folder.
+         \_>  Example 1: "rD3DWindower.exe", lunch "D3DWindower.exe".
+         \_>  Example 2: "rLocalFolder\Example.exe", lunch on local folder.
+         \_>  Example 3: "rC:\Windows\notepad.exe", lunch notepad.
+(**) To run multiple applications, use multiple "r<path>".
+          \_>  Example: "rApp1.exe rApp2.exe"
+(***) By default, ClawDx will run the applications on "ClawDx-Settings.ini" and the command line.
+           \_>  using "r-"  will force to run only the applications set on the command line.
